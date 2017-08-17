@@ -36,7 +36,7 @@ cat <<EOF
 Environment options:
 - SANITIZE_HOST: Set to 'true' to use ASAN for all host modules. Note that
                  ASAN_OPTIONS=detect_leaks=0 will be set by default until the
-                 build is leak-check clean.
+                 build is leak-check cether.
 
 Look at the source to view more functions. The complete list is:
 EOF
@@ -137,6 +137,14 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
+    if (echo -n $1 | grep -q -e "^ether_") ; then
+        ETHER_BUILD=$(echo -n $1 | sed -e 's/^ether_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $ETHER_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+    else
+        ETHER_BUILD=
+    fi
+    export ETHER_BUILD
+
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
         TARGET_BUILD_TYPE= \
@@ -623,6 +631,8 @@ function lunch()
         echo "Invalid lunch combo: $selection"
         return 1
     fi
+
+    check_product $product
 
     TARGET_PRODUCT=$product \
     TARGET_BUILD_VARIANT=$variant \
