@@ -3210,21 +3210,22 @@ SEREIN_TARGET_PACKAGE := $(PRODUCT_OUT)/$(SEREIN_VERSION).zip
 .PHONY: otapackage bacon serein vadapav
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 serein: otapackage
+bacon: serein vadapav
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SEREIN_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(SEREIN_TARGET_PACKAGE) > $(SEREIN_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_RED}""${CL_RED}
-	@echo -e ${CL_RED}"    ▄██████▄   ▄███████▄   ▄██████▄     ▄████████    ▄███████▄ "${CL_RED}
-	@echo -e ${CL_RED}"   ███    ███ ██▀     ▄██ ███    ███   ███    ███   ███    ███ "${CL_RED}
-	@echo -e ${CL_RED}"   ███    █▀        ▄███▀ ███    ███   ███    █▀    ███    ███ "${CL_RED}
-	@echo -e ${CL_RED}"  ▄███         ▀█▀▄███▀▄▄ ███    ███   ███          ███    ███ "${CL_RED}
-	@echo -e ${CL_RED}" ▀▀███ ████▄    ▄███▀   ▀ ███    ███ ▀███████████ ▀█████████▀ "${CL_RED}
-	@echo -e ${CL_RED}"   ███    ███ ▄███▀       ███    ███          ███   ███ "${CL_RED}
-	@echo -e ${CL_RED}"   ███    ███ ███▄     ▄█ ███    ███    ▄█    ███   ███ "${CL_RED}
-	@echo -e ${CL_RED}"   ████████▀   ▀████████▀  ▀██████▀   ▄████████▀   ▄████▀ "${CL_RED}
-	@echo -e ${CL_RED}"                           A Ground Zero Roms "${CL_RED}
-	@echo -e ${CL_RED}"                                Project      "${CL_RED}
-	@echo -e "Package complete: $(SEREIN_TARGET_PACKAGE)"
-bacon: serein
+	@echo -e ${CL_RED}""${CL_RED}
+	@echo -e ${CL_RED}"   ▄████████    ▄████████    ▄████████    ▄████████  ▄█  ███▄▄▄▄ "${CL_RED}
+	@echo -e ${CL_RED}"  ███    ███   ███    ███   ███    ███   ███    ███ ███  ███▀▀▀██ "${CL_RED}
+	@echo -e ${CL_RED}"  ███    █▀    ███    █▀    ███    ███   ███    █▀  ███▌ ███   ███ "${CL_RED}
+	@echo -e ${CL_RED}"  ███         ▄███▄▄▄      ▄███▄▄▄▄██▀  ▄███▄▄▄     ███▌ ███   ███ "${CL_RED}
+	@echo -e ${CL_RED}" ███████████ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███▌ ███   ███ "${CL_RED}
+	@echo -e ${CL_RED}"         ███   ███    █▄  ▀███████████   ███    █▄  ███  ███   ███ "${CL_RED}
+	@echo -e ${CL_RED}"   ▄█    ███   ███    ███   ███    ███   ███    ███ ███  ███   ███ "${CL_RED}
+ 	@echo -e ${CL_RED}" ▄████████▀    ██████████   ███    ███   ██████████ █▀    ▀█   █▀ "${CL_RED}
+	@echo -e ${CL_RED}"                            ███    ███                           "${CL_RED}
+        @echo -e ${CL_RED}"                          Team-KEK Project ${CL_RED}
+   	@echo -e "Package complete: $(SEREIN_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
