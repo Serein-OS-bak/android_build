@@ -3222,10 +3222,10 @@ bacon: serein vadapav
 	@echo -e ${CL_RED}" ███████████ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███▌ ███   ███ "${CL_RED}
 	@echo -e ${CL_RED}"         ███   ███    █▄  ▀███████████   ███    █▄  ███  ███   ███ "${CL_RED}
 	@echo -e ${CL_RED}"   ▄█    ███   ███    ███   ███    ███   ███    ███ ███  ███   ███ "${CL_RED}
- 	@echo -e ${CL_RED}" ▄████████▀    ██████████   ███    ███   ██████████ █▀    ▀█   █▀ "${CL_RED}
+	@echo -e ${CL_RED}" ▄████████▀    ██████████   ███    ███   ██████████ █▀    ▀█   █▀ "${CL_RED}
 	@echo -e ${CL_RED}"                            ███    ███                           "${CL_RED}
-        @echo -e ${CL_RED}"                          Team-KEK Project ${CL_RED}
-   	@echo -e "Package complete: $(SEREIN_TARGET_PACKAGE)"
+	@echo -e ${CL_RED}"                          Team-KEK Project"${CL_RED}
+	@echo -e "Package complete: $(SEREIN_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
