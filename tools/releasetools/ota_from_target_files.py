@@ -839,18 +839,17 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  script.Print("********************************************************************");
-  script.Print("  ________   _______    ________   _______    ___   ________        ");
-  script.Print(" |\   ____\ |\  ___ \  |\   __  \ |\  ___ \  |\  \ |\   ___  \      ");
-  script.Print(" \ \  \___|_\ \   __/| \ \  \|\  \\ \   __/| \ \  \\ \  \\ \  \     ");
-  script.Print("  \ \_____  \\ \  \_|/__\ \   _  _\\ \  \_|/__\ \  \\ \  \\ \  \    ");
-  script.Print("   \|____|\  \\ \  \_|\ \\ \  \\  \|\ \  \_|\ \\ \  \\ \  \\ \  \   ");
-  script.Print("     ____\_\  \\ \_______\\ \__\\ _\ \ \_______\\ \__\\ \__\\ \__\  ");
-  script.Print("    |\_________\\|_______| \|__|\|__| \|_______| \|__| \|__| \|__|  ");
-  script.Print("    \|_________|                                                    ");
-  script.Print("                            AOSP Pie                                ");
-  script.Print("                     A Team-KEK Roms Project                        ");
-  script.Print("********************************************************************");
+  script.Print("*************************************************");
+  script.Print("                                                 ");
+  script.Print("                   Serein OS                     ");
+  script.Print("                                                 ");
+  script.Print("                Android 9.0 | Pie                ");
+  script.Print("                                                 ");
+  script.Print("                  POWERED By                     ");
+  script.Print("                                                 ");
+  script.Print("   Team KEK | Joker (Myron Viegas) | Ovenoboyo   ");
+  script.Print("                                                 ");
+  script.Print("*************************************************");
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
