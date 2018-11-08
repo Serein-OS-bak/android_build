@@ -839,18 +839,20 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  script.Print("*************************************************");
-  script.Print("                                                 ");
-  script.Print("                   Serein OS                     ");
-  script.Print("                                                 ");
-  script.Print("                Android 9.0 | Pie                ");
-  script.Print("                                                 ");
-  script.Print("                  POWERED By                     ");
-  script.Print("                                                 ");
-  script.Print("   Team KEK | Joker (Myron Viegas) | Ovenoboyo   ");
-  script.Print("                                                 ");
-  script.Print("*************************************************");
-
+  script.Print("**************************************************");
+  script.Print("      ____   _____  ____   _____  ___  _   _      ");
+  script.Print("     / ___| | ____||  _ \ | ____||_ _|| \ | |     ");
+  script.Print("     \___ \ |  _|  | |_) ||  _|   | | |  \| |     ");
+  script.Print("      ___) || |___ |  _ < | |___  | | | |\  |     ");
+  script.Print("     |____/ |_____||_| \_\|_____||___||_| \_|     ");
+  script.Print("                                                  ");
+  script.Print("                                                  ");
+  script.Print("              Android 9.0 | Powered By            ");
+  script.Print("                                                  ");
+  script.Print("                     Team KEK                     ");
+  script.Print("                                                  ");
+  script.Print("**************************************************"); 
+  
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
