@@ -3035,10 +3035,11 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 
 TARGET_PACKAGE := $(PRODUCT_OUT)/ PearlOS-$(PRODUCT_VERSION_MAJOR)-$(PEARL_BUILD)-$(PEARL_BUILD_TYPE)$(PEARL_POSTFIX).zip
 
-.PHONY: otapackage bacon
+.PHONY: otapackage bacon ROR
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
-bacon: otapackage
-  $(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
+bacon: ether
+ether: otapackage
+    $(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(TARGET_PACKAGE) > $(TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLD}${CL_CYN}"===============================-Package complete-==============================="${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(TARGET_PACKAGE)${CL_RST}
